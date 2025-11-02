@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  be-library:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: be-library
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/usr/src/app 
